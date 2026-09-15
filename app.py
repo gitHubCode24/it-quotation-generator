@@ -128,7 +128,7 @@ def generate_pdf_bytes(df: pd.DataFrame, meta: dict, terms_list: list) -> bytes:
         r_cells = []
         for col in cols_to_render:
             val = row[col]
-            fmt_val = f"₹{val:,.2f}" if isinstance(val, (int, float)) and col not in ["Qty", "HSN Code"] else str(val)
+            fmt_val = f"INR {val:,.2f}" if isinstance(val, (int, float)) and col not in ["Qty", "HSN Code"] else str(val)
             r_cells.append(Paragraph(fmt_val, cell_style))
         table_content.append(r_cells)
 
